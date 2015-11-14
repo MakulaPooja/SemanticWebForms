@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="test.json"></script>
+    <base href="http://demos.telerik.com/kendo-ui/treeview/checkboxes">
+    <style>html { font-size: 12px; font-family: Arial, Helvetica, sans-serif; }</style>
+    <title></title>
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1316/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1316/styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1316/styles/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1316/styles/kendo.dataviz.default.min.css" />
+
+    <script src="http://cdn.kendostatic.com/2014.3.1316/js/jquery.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2014.3.1316/js/kendo.all.min.js"></script>
+</head>
+<body>
+<div id="example">
+
+    <div class="demo-section k-header">
+        <div class="box-col">
+            <h4>Check nodes</h4>
+            <div id="treeview"></div>
+        </div>
+        <div class="box-col">
+            <h4>Status</h4>
+            <p id="result">No nodes checked.</p>
+        </div>
+    </div>
+
+    <script>
+        $("#treeview").kendoTreeView({
+            checkboxes: {
+                checkChildren: true
+            },
+
+            check: onCheck,
+            dataSource: data
+        });
+
+        // function that gathers IDs of checked nodes
+        function checkedNodeIds(nodes, checkedNodes) {
+            var gflag = false;
+            for (var i = 0; i < nodes.length; i++) {
+                var flag = false;
+                if (nodes[i].hasChildren) {
+
+                    if(checkedNodeIds(nodes[i].children.view(), checkedNodes)== true)
+                        flag = true;
+                }
+                if (nodes[i].checked || flag) {
+                    checkedNodes.push(nodes[i].id);
+                    gflag = true;
+                }
+            }
+            return gflag;
+        }
+        var str = "";
+        // function dfs(nodes, checkedNodes) {
+        //     for (var i = 0; i < nodes.length; i++) {
+        //         bool flag = false;
+        //         if (nodes[i].hasChildren) {
+        //             dfs(nodes[i].children.view(), checkedNodes);
+        //             flag = true;
+        //         }
+        //         if (nodes[i].checked) {
+        //             checkedNodes.push(nodes[i].id);
+        //         }
+
+        //     }
+        // }
+        // show checked node IDs on datasource change
+        function onCheck() {
+            var checkedNodes = [],
+                treeView = $("#treeview").data("kendoTreeView"),
+                message;
+
+            checkedNodeIds(treeView.dataSource.view(), checkedNodes);
+
+            if (checkedNodes.length > 0) {
+                message = "IDs of checked nodes: " + checkedNodes.join(",");
+            } else {
+                message = "No nodes checked.";
+            }
+            // dfs();
+            // alert(str);
+            $("#result").html(message);
+        }
+    </script>
+
+    <style scoped>
+        #treeview .k-sprite {
+            background-image: url("../content/web/treeview/coloricons-sprite.png");
+        }
+
+        .rootfolder { background-position: 0 0; }
+        .folder     { background-position: 0 -16px; }
+        .pdf        { background-position: 0 -32px; }
+        .html       { background-position: 0 -48px; }
+        .image      { background-position: 0 -64px; }
+
+        .box-col { min-width: 300px;}
+
+        /* fix for style regression, available in internal builds */
+        .k-treeview .k-checkbox { opacity: 1; width: auto; }
+    </style>
+</div>
+
+
+</body>
+</html>

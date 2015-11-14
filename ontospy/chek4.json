@@ -1,0 +1,123 @@
+data = [
+{id: 1,text:"BudgetHotelDestination" 
+},{id: 2,text:"Destination" 
+, items:[   {id: 3,text:"hasPart"}
+,   {id: 4,text:"hasActivity"}
+,   {id: 5,text:"hasAccommodation"}
+,
+  {id: 6,text:"Beach" 
+, items:[{id: 7, text: "CurrawongBeach"},{id: 8, text: "BondiBeach"},      {id: 9,text:"hasPart"}
+,      {id: 10,text:"hasActivity"}
+,      {id: 11,text:"hasAccommodation"}
+]},
+  {id: 12,text:"UrbanArea" 
+, items:[      {id: 13,text:"hasPart"}
+,      {id: 14,text:"hasActivity"}
+,      {id: 15,text:"hasAccommodation"}
+,
+    {id: 16,text:"Town" 
+, items:[{id: 17, text: "Coonabarabran"},         {id: 18,text:"hasPart"}
+,         {id: 19,text:"hasActivity"}
+,         {id: 20,text:"hasAccommodation"}
+]},
+    {id: 21,text:"City" 
+, items:[{id: 22, text: "Cairns"},         {id: 23,text:"hasPart"}
+,         {id: 24,text:"hasActivity"}
+,         {id: 25,text:"hasAccommodation"}
+,
+      {id: 26,text:"Capital" 
+, items:[{id: 27, text: "Sydney"},{id: 28, text: "Canberra"},            {id: 29,text:"hasPart"}
+,            {id: 30,text:"hasActivity"}
+,            {id: 31,text:"hasAccommodation"}
+]}]}]},
+  {id: 32,text:"RuralArea" 
+, items:[{id: 33, text: "CapeYork"},{id: 34, text: "Woomera"},      {id: 35,text:"hasPart"}
+,      {id: 36,text:"hasActivity"}
+,      {id: 37,text:"hasAccommodation"}
+,
+    {id: 38,text:"Farmland" 
+, items:[         {id: 39,text:"hasPart"}
+,         {id: 40,text:"hasActivity"}
+,         {id: 41,text:"hasAccommodation"}
+]},
+    {id: 42,text:"NationalPark" 
+, items:[{id: 43, text: "Warrumbungles"},{id: 44, text: "BlueMountains"},         {id: 45,text:"hasPart"}
+,         {id: 46,text:"hasActivity"}
+,         {id: 47,text:"hasAccommodation"}
+]}]}]},{id: 48,text:"AccommodationRating" 
+, items:[{id: 49, text: "TwoStarRating"},{id: 50, text: "ThreeStarRating"},{id: 51, text: "OneStarRating"}]},{id: 52,text:"BudgetAccommodation" 
+},{id: 53,text:"BackpackersDestination" 
+},{id: 54,text:"RetireeDestination" 
+},{id: 55,text:"Accommodation" 
+, items:[   {id: 56,text:"hasRating"}
+,
+  {id: 57,text:"Campground" 
+, items:[      {id: 58,text:"hasRating"}
+]},
+  {id: 59,text:"BedAndBreakfast" 
+, items:[      {id: 60,text:"hasRating"}
+]},
+  {id: 61,text:"Hotel" 
+, items:[      {id: 62,text:"hasRating"}
+,
+    {id: 63,text:"LuxuryHotel" 
+, items:[{id: 64, text: "FourSeasons"},         {id: 65,text:"hasRating"}
+]}]}]},{id: 66,text:"FamilyDestination" 
+},{id: 67,text:"Activity" 
+, items:[   {id: 68,text:"hasContact"}
+,   {id: 69,text:"isOfferedAt"}
+,
+  {id: 70,text:"Sightseeing" 
+, items:[      {id: 71,text:"hasContact"}
+,      {id: 72,text:"isOfferedAt"}
+,
+    {id: 73,text:"Safari" 
+, items:[         {id: 74,text:"hasContact"}
+,         {id: 75,text:"isOfferedAt"}
+]},
+    {id: 76,text:"Museums" 
+, items:[         {id: 77,text:"hasContact"}
+,         {id: 78,text:"isOfferedAt"}
+]}]},
+  {id: 79,text:"Adventure" 
+, items:[      {id: 80,text:"hasContact"}
+,      {id: 81,text:"isOfferedAt"}
+,
+    {id: 82,text:"BunjeeJumping" 
+, items:[         {id: 83,text:"hasContact"}
+,         {id: 84,text:"isOfferedAt"}
+]},
+    {id: 85,text:"Safari" 
+, items:[         {id: 86,text:"hasContact"}
+,         {id: 87,text:"isOfferedAt"}
+]}]},
+  {id: 88,text:"Relaxation" 
+, items:[      {id: 89,text:"hasContact"}
+,      {id: 90,text:"isOfferedAt"}
+,
+    {id: 91,text:"Yoga" 
+, items:[         {id: 92,text:"hasContact"}
+,         {id: 93,text:"isOfferedAt"}
+]},
+    {id: 94,text:"Sunbathing" 
+, items:[         {id: 95,text:"hasContact"}
+,         {id: 96,text:"isOfferedAt"}
+]}]},
+  {id: 97,text:"Sports" 
+, items:[      {id: 98,text:"hasContact"}
+,      {id: 99,text:"isOfferedAt"}
+,
+    {id: 100,text:"Surfing" 
+, items:[         {id: 101,text:"hasContact"}
+,         {id: 102,text:"isOfferedAt"}
+]},
+    {id: 103,text:"Hiking" 
+, items:[         {id: 104,text:"hasContact"}
+,         {id: 105,text:"isOfferedAt"}
+]}]}]},{id: 106,text:"QuietDestination" 
+},{id: 107,text:"Contact" 
+, items:[   {id: 108,text:"hasEMail"}
+,   {id: 109,text:"hasZipCode"}
+,   {id: 110,text:"hasStreet"}
+,   {id: 111,text:"hasCity"}
+]},]

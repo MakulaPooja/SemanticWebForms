@@ -1,0 +1,79 @@
+data = [
+{ "id": "1","text": "student commity"	, "items": [
+	{ "id": "2","text": "arts"		, "items": [
+		{ id: 3,text: "painting designing"			, items: [
+			{ id: 4,text: "t-shirt desgining"			},
+			{ id: 5,text: "face painting"			},
+			{ id: 6,text: "wall painting"			},
+			{ id: 7,text: "hair designing"			},
+			{ id: 8,text: "embroidary"			}]
+		},
+		{ id: 9,text: "food and mess commity"		},
+		{ id: 10,text: "dance and game commity"		},
+		{ id: 11,text: "code commity"		},
+		{ id: 12,text: "project and research commity"			, items: [
+			{ id: 13,text: "Under graduate project"			},
+			{ id: 14,text: "phd project"			}]
+		},
+		{ id: 15,text: "relax commity"		},
+		{ id: 16,text: "writng and start up commity"			, items: [
+			{ id: 17,text: "design logo"			},
+			{ id: 18,text: "start up ideas"				, items: [
+				{ id: 19,text: "innovative ideas"				}]
+			},
+			{ id: 20,text: "finding commity"			},
+			{ id: 21,text: "other commity"			}]
+		}]
+	},
+	{ id: 22,text: "acadmics"		, items: [
+		{ id: 23,text: "head  faculty"		},
+		{ id: 24,text: "faculty"		},
+		{ id: 25,text: "quatre T.A"		},
+		{ id: 26,text: "T.A"		}]
+	},
+	{ id: 27,text: "dean acadmics"		, items: [
+		{ id: 28,text: "Act"			, items: [
+			{ id: 29,text: "Act1"			},
+			{ id: 30,text: "Act2"			},
+			{ id: 31,text: "MotivationPrelude"			},
+			{ id: 32,text: "RecapOfPreviousAct"			},
+			{ id: 33,text: "SummaryOfAct"			}]
+		},
+		{ id: 34,text: "Instruction"			, items: [
+			{ id: 35,text: "Instruction1"			},
+			{ id: 36,text: "Instruction2"				, items: [
+				{ id: 37,text: "LearningObject"					, items: [
+					{ id: 38,text: "ALOCOMCoreOntology"						, items: [
+						{ id: 39,text: "AlocomContentObject"							, items: [
+							{ id: 40,text: "ContentType"								, items: [
+								{ id: 41,text: "Case"								},
+								{ id: 42,text: "Fact"								},
+								{ id: 43,text: "Model"								},
+								{ id: 44,text: "Rule"								},
+								{ id: 45,text: "Theory"								}]
+							}]
+						}]
+					}]
+				}]
+			}]
+		},
+		{ id: 46,text: "Play"			, items: [
+			{ id: 47,text: "Act"				, items: [
+				{ id: 48,text: "Act1"				},
+				{ id: 49,text: "Act2"				},
+				{ id: 50,text: "Prelude"				},
+				{ id: 51,text: "act3"				},
+				{ id: 52,text: "SummaryOfAct"				}]
+			},
+			{ id: 53,text: "sortex"			},
+			{ id: 54,text: "Play"			},
+			{ id: 55,text: "SummPlay"			}]
+		},
+		{ id: 56,text: "Scene"			, items: [
+			{ id: 57,text: "Site"			},
+			{ id: 58,text: "Sats"			}]
+		}]
+	},
+	{ id: 59,text: "senior faculty"	}]
+}]
+
