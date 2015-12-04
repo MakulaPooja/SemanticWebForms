@@ -12,7 +12,27 @@
 
     <script src="http://cdn.kendostatic.com/2014.3.1316/js/jquery.min.js"></script>
     <script src="http://cdn.kendostatic.com/2014.3.1316/js/kendo.all.min.js"></script>
-    <!--<script type="text/json" src = "check5.json"></script>-->
+
+    <!-- This is the style sheet for dynamically generated fields-->
+
+        <style>
+
+                label{
+                        display: inline-block;
+                        float: left;
+                        clear: left;
+                        width: 250px;
+                        text-align: right;
+                    }                       
+                
+                input{
+                        display: inline-block;
+                        float: left;
+                    }
+
+        </style>
+    <!-- end of the stylesheet for for dynamically generated fields -->
+    
 </head>
 <body>
 <div id="example">
@@ -107,13 +127,13 @@
     </style>
 </div>
 
-<center><button onclick="fetchIDs()">Generate Form</button></center>
+<center><button onclick="fetchIDs()">Generate Form</button></center><br><br>
 
-<div id = "final_form"></div>
+<!--<div id = "final_form"></div>-->
 
 <script type="text/javascript">
-    
-
+    var input_array = [];
+    div_id = 0;
     function fetchIDs(){
 
 
@@ -169,47 +189,92 @@ if(data[9].items)
 console.log(data[9].items[0]);
 
 fetchIDs2(data, IDarray);
+console.log("the fetched ones : " + input_array);
 
+    var cover_box = document.createElement('div');
+    cover_box.id = div_id++;
+    cover_box.setAttribute("style","margin-left:350px;background-color:rgb(252,172,152);width:670px;border:solid;padding-top:12px;border-radius:20px;border-width:5px");
+
+    for (var index = 0; index < input_array.length; index++)
+    {
+        var label = document.createElement('label');
+        label.setAttribute("style","font-size:16px;");
+        // this is to remove the former "has" substring from the label
+        //===================================================================================
+        if(input_array[index].indexOf("has") == 0)
+        {
+            var new_label = input_array[index];
+            new_label = new_label.replace("has",'');
+            label.innerHTML = new_label + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+        else
+        {
+            label.innerHTML = input_array[index] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+        //===================================================================================
+        //cover_box.innerHTML += input_array[index] + '&nbsp;';
+        cover_box.appendChild(label);
+        var field = document.createElement('input');
+        field.setAttribute("style","border-radius:5px;");
+        cover_box.appendChild(field);
+        cover_box.innerHTML += "&nbsp;&nbsp"
+
+        var add_btn = document.createElement('button');
+        cover_box.appendChild(add_btn)
+        cover_box.innerHTML += '<br><br>';
+    }
+
+    document.getElementsByTagName('body')[0].appendChild(cover_box);
 return;
     }
 
-
     var flag = 0;
 
-function fetchIDs2(object, IDarray){
+function fetchIDs2(object, IDarray)
+{
 
+                    
     if (object instanceof Array)
     {
-
-        for(var i=0; i < object.length; i++ )
+        //checking if each object's id is equal to any of the IDs in IDarray, recursively
+        for(var i=0; i < object.length; i++ )  //for every element in object
         {
             //console.log(object[i]);
             //console.log(object[i].id);
             //console.log(IDarray.length);
-            for(var ind = 0; ind < IDarray.length; ind++)
+            for(var ind = 0; ind < IDarray.length; ind++) //chek if the object's id matches with any element in IDarray
             {
                 if(object[i].id == IDarray[ind])
                 {
+
+                    input_array.push(object[i].text);   //push the matched ones' text values into a global input_array.
+                                                        // this will be helpful in generating forms
+                    /*================================================================================
                     //console.log("I found it\n");
                     console.log(IDarray[ind]+" : "+object[i].text);
-                    var target = document.getElementById("final_form");
-                    var temp = document.createElement("input");
-                    if(flag == 0){
-                    var addbtn = document.createElement("button");
-                    addbtn.setAttribute("onclick","fetchIDs()");
-                    //addbtn.value = 'Add';
-                    //addbtn.setAttribute('id','addbtn');
-                    addbtn.innerHTML = 'ADD more'
-                    target.appendChild(addbtn);
-                    target.innerHTML += "<br>"
-                    flag = 1;
-                }
-                    temp.setAttribute("style", "margin-left:120px; display: block; box-sizing:border-box;");
-                    target.innerHTML += object[i].text + "&nbsp;";
-                    //document.setAttribute("type","text");
-                    target.appendChild(temp);
+                    // var target = document.getElementById("final_form");
+                    // var temp = document.createElement("input");
+                          
+                    //if(flag == 0)
+                    //{
+                        //var addbtn = document.createElement("button");
+                        //addbtn.setAttribute("onclick","fetchIDs()");
+                        //addbtn.value = 'Add';
+                        //addbtn.setAttribute('id','addbtn');
+                        //addbtn.innerHTML = 'ADD more'
+                        //target.appendChild(addbtn);
+                        //target.innerHTML += "<br>"
+                        //  flag = 1;
+                    //}
                     
-                    target.innerHTML += "<br><br>";
+                    //temp.setAttribute("style", "margin-left:120px; display: block; box-sizing:border-box;");
+                    //target.innerHTML += object[i].text + "&nbsp;";
+                    //document.setAttribute("type","text");
+                    //cover_box.appendChild(temp);
+                    //cover_box.appendChild(addbtn);
+                    
+                    //cover_box.innerHTML += "<br><br>";
+                    ===================================================================================*/
                     break;
                 }
 
@@ -221,6 +286,8 @@ function fetchIDs2(object, IDarray){
     }
 
 }
+
+
 
 
     </script>
