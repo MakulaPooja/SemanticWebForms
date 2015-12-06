@@ -619,10 +619,10 @@ data = [
 ,         {id: 539,text:"hasSpiciness"}
 ,         {id: 540,text:"hasIngredient"}
 ,         {id: 541,text:"isIngredientOf"}
-]}]}]},{id: 542,text:"VegetarianTopping" 
+]}]}]},{id: 542,text:"SpicyTopping" 
 , items:[   {id: 543,text:"hasCountryOfOrigin"}
 ,   {id: 544,text:"hasSpiciness"}
-]},{id: 545,text:"SpicyTopping" 
+]},{id: 545,text:"VegetarianTopping" 
 , items:[   {id: 546,text:"hasCountryOfOrigin"}
 ,   {id: 547,text:"hasSpiciness"}
 ]},{id: 548,text:"ThinAndCrispyPizza" 
